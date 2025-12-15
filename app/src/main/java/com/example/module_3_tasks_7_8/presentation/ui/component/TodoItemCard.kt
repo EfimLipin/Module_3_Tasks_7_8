@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.module_3_tasks_7_8.domain.model.TodoItem
 
@@ -34,7 +35,8 @@ fun TodoItemCard(
         ) {
             Checkbox(
                 checked = todo.isCompleted,
-                onCheckedChange = onCheckedChange
+                onCheckedChange = onCheckedChange,
+                modifier = androidx.compose.ui.Modifier.testTag("checkbox_${todo.id}")
             )
             Column(
                 modifier = Modifier
